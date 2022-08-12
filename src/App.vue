@@ -1,3 +1,6 @@
 <template>
-  <div>Hello Vite Vue2</div>
+  <div id="app">
+    <aside></aside>
+    <main><router-view /></main>
+  </div>
 </template>

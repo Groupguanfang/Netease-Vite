@@ -1,17 +1,20 @@
-import VueRouter from 'vue-router'
-import Vue from 'vue'
+import VueRouter from "vue-router";
+import Vue from "vue";
 
-// 使用VueRouter
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
-
-]
+  {
+    path: "/",
+    meta: { title: "首页" },
+    component: () => import("@/views/Home.vue"),
+  },
+];
 
 const router = new VueRouter({
-	mode: 'hash',
-	base: '/',
-	routes
-})
+  mode: "hash",
+  base: "/",
+  routes,
+});
 
-export default router
+export default router;
