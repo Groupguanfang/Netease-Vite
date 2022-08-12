@@ -6,4 +6,4 @@
 
 </div>
 
-* 使用Vite+Vue2+Router+VueX全家桶制作而成
+* 📝使用Vite+Vue2+Router+VueX全家桶制作而成
