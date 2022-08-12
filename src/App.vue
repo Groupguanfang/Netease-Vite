@@ -1,6 +1,13 @@
 <template>
   <div id="app">
-    <aside></aside>
-    <main><router-view /></main>
+    <div class="first-layer">
+      <aside><Aside></Aside></aside>
+      <main><router-view /></main>
+    </div>
   </div>
 </template>
+
+<script>
+import Aside from "./components/Aside.vue";
+export default { components: { Aside } };
+</script>
