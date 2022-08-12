@@ -1,8 +1,12 @@
 <template>
   <div id="app">
     <div class="first-layer">
-      <aside><Aside></Aside></aside>
-      <main><router-view /></main>
+      <aside>
+        <Aside />
+      </aside>
+      <main>
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
