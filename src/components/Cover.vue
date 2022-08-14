@@ -13,7 +13,9 @@ export default {
 
 <style lang="less" scoped>
 .cover {
-  height: 100%;
+  height: 170px;
+  width: 170px;
+  overflow: hidden;
   img {
     height: 100%;
     width: 100%;

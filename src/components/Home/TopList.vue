@@ -59,6 +59,10 @@ export default {
 
 .toplist-item {
   transition: ease 0.2s;
+  width: 100% !important;
+  .cover {
+    width: 100% !important;
+  }
 }
 .toplist-item.focus {
   transform: scale(1.1);
