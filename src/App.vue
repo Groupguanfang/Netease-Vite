@@ -13,5 +13,11 @@
 
 <script>
 import Aside from "./components/Aside.vue";
-export default { components: { Aside } };
+export default {
+  components: { Aside },
+  mounted() {
+    this.$tv.requestFocus(document.querySelector("#first"));
+    this.$tv.scrollEl = document.querySelector("main");
+  },
+};
 </script>

@@ -56,4 +56,13 @@ export default {
 .list .cover {
   height: 100%;
 }
+
+.toplist-item {
+  transition: ease 0.2s;
+}
+.toplist-item.focus {
+  transform: scale(1.1);
+  transition: ease 0.2s;
+  box-shadow: 0 0 40px #0006;
+}
 </style>
