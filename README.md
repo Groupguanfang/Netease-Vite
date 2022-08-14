@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="80px" height="80px" src="https://github.com/Groupguanfang/Netease-Vite/blob/master/src/assets/logo.png?raw=true" />
+<img style="margin-top:30px" width="80px" height="80px" src="https://github.com/Groupguanfang/Netease-Vite/blob/master/src/assets/logo.png?raw=true" />
 
 ## 网易云音乐TV版
 [📦️下载最新APK安装包](https://github.com/Groupguanfang/Netease-Vite/releases)
