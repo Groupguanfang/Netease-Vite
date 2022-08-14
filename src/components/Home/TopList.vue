@@ -4,7 +4,7 @@
     <div class="list">
       <div class="toplist-item" :key="index" v-for="(item, index) in toplist">
         <Cover
-          :image="item.coverImgUrl + '?param=200y200'"
+          :image="item.coverImgUrl + '?param=300y300'"
           :title="item.name"
         ></Cover>
       </div>
@@ -39,7 +39,7 @@ export default {
 .list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 5px;
 }
 .list .cover {

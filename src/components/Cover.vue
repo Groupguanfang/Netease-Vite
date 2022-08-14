@@ -12,19 +12,21 @@ export default {
 </script>
 
 <style lang="less" scoped>
-img {
-  height: 100%;
-  width: 100%;
-  border-radius: var(--radius);
-}
-.title {
-  position: relative;
-  top: -35px;
-  left: 15px;
-  color: #fff;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  width: 170px;
-  overflow: hidden;
+.cover {
+  img {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--radius);
+  }
+  .title {
+    position: relative;
+    top: -35px;
+    left: 15px;
+    color: #fff;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 150px;
+    overflow: hidden;
+  }
 }
 </style>
