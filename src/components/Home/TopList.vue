@@ -2,7 +2,13 @@
   <div class="toplist">
     <h2>热榜</h2>
     <div class="list">
-      <div class="toplist-item" :key="index" v-for="(item, index) in toplist">
+      <div
+        v-focusable
+        @click="Action(item.id)"
+        class="toplist-item"
+        :key="index"
+        v-for="(item, index) in toplist"
+      >
         <Cover
           :image="item.coverImgUrl + '?param=300y300'"
           :title="item.name"
@@ -19,6 +25,11 @@ export default {
     return {
       toplist: [],
     };
+  },
+  methods: {
+    Action(id) {
+      this.$router.push("/list/" + id);
+    },
   },
   async mounted() {
     try {
