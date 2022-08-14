@@ -8,6 +8,9 @@ import "./assets/index.less";
 axios.defaults.baseURL = "https://server.xhhzs.cn";
 Vue.prototype.$axios = axios;
 
+import focusable from "vue-tv-focusable";
+Vue.use(focusable);
+
 new Vue({
   router,
   store,
