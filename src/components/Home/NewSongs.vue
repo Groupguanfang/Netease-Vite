@@ -38,6 +38,8 @@ export default {
     flex-shrink: 0;
     transition: ease 0.2s;
     display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
   }
 }
 </style>
