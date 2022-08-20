@@ -1,2 +1,3 @@
 import user from "./user";
-export default user;
+let obj = Object.assign(user);
+export default obj;
