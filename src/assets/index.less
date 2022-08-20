@@ -1,6 +1,7 @@
 :root {
     --radius: 4px;
     --main: #e8def8;
+    --first: #6750A4;
     --second: #f6f6f7;
     --third: #fdeaea;
 }
@@ -18,10 +19,6 @@ body,
         .first-layer {
             display: flex;
 
-            aside {
-                width: 240px;
-            }
-
             main {
                 width: 100%;
                 overflow-x: hidden;
@@ -35,9 +32,9 @@ body,
 button {
     outline: none;
     border: none;
-    background-color: var(--main);
+    background-color: var(--first);
     color: #fff;
-    border-radius: var(--radius);
+    border-radius: 100px;
     padding: 10px 22px;
     font-size: 18px;
     cursor: pointer;
@@ -46,9 +43,13 @@ button {
 
 button:hover,
 button.focus {
-    opacity: 0.8;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
     transition: ease 0.2s;
     transform: scale(1.1);
+}
+
+button:active {
+    background: #6750A4 !important;
 }
 
 input {

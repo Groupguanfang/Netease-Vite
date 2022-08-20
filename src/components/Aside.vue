@@ -23,7 +23,7 @@ export default {
 <style lang="less" scoped>
 .aside {
   border-right: #e0e0e0 1px solid;
-  width: 240px;
+  width: 280px;
   height: 100%;
   .logo {
     width: 100%;
@@ -42,7 +42,7 @@ export default {
     font-size: 16px;
     margin: 10px;
     background: #f6f6f7;
-    border-radius: 100px;
+    border-radius: 14px;
     color: #000;
   }
   .menu-item.focus {

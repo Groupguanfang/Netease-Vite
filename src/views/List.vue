@@ -72,7 +72,11 @@ export default {
       // 歌单内歌曲
       let songs = await this.$axios.get("/playlist/track/all?id=" + this.id);
       this.songs = songs.data.songs;
-      console.log(songs);
+      // 获取该歌单的制作人信息
+      let author = await this.$axios.get(
+        "/user/detail?uid=" + data.data.playlist.userId
+      );
+      console.log(author);
     } catch {
       console.error(error);
     }
@@ -91,10 +95,10 @@ h2 {
     display: flex;
     .left {
       width: 20%;
-      margin-right: 10px;
+      margin-right: 24px;
       img {
         width: 100%;
-        border-radius: var(--radius);
+        border-radius: 24px;
       }
     }
     .right {
