@@ -28,6 +28,12 @@ const routes = [
     meta: { title: "详情" },
     component: () => import("@/views/List.vue"),
   },
+  {
+    path: "/user/:id",
+    name: "user",
+    meta: { title: "用户" },
+    component: () => import("@/views/User.vue"),
+  },
 ];
 
 const router = new VueRouter({

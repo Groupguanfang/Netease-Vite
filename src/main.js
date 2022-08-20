@@ -4,6 +4,7 @@ import router from "./router/index.js";
 import store from "./store";
 import axios from "axios";
 import "./assets/index.less";
+import "./storage";
 
 axios.defaults.baseURL = "https://server.xhhzs.cn";
 Vue.prototype.$axios = axios;
