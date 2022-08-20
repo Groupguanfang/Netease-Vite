@@ -16,8 +16,10 @@ import Aside from "./components/Aside.vue";
 export default {
   components: { Aside },
   mounted() {
+    // 聚焦
     this.$tv.requestFocus(document.querySelector("#first"));
     this.$tv.scrollEl = document.querySelector("main");
+    // 当前播放
   },
 };
 </script>

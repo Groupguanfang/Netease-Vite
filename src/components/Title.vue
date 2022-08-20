@@ -2,7 +2,7 @@
   <div class="title">
     <h1>{{ title }}</h1>
     <div class="option">
-      <div @click="UserAction()" class="item">
+      <div @click="UserAction()" class="item" v-focusable>
         <img class="avatar" :src="avatar" />
         <div class="title">我的</div>
       </div>
@@ -43,15 +43,19 @@ export default {
   height: 3em;
   display: flex;
   .item {
-    background: #f6f6f7;
+    border: 1px solid #79747e;
     display: flex;
     align-items: center;
     border-radius: 100px;
-    padding: 8px;
+    padding: 7px 16px;
     .title {
       margin-left: 10px;
       margin-right: 5px;
     }
+  }
+  .item.focus {
+    border: none;
+    background: #d0c6df;
   }
 }
 </style>
