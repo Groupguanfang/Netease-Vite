@@ -4,9 +4,7 @@
       <img src="@/assets/neteaselogo.png" />
     </div>
     <div id="menu" class="menu">
-      <div @click="to('/')" class="menu-item" id="first" v-focusable>
-        发现音乐
-      </div>
+      <div @click="to('/')" class="menu-item" id="first" v-focusable>发现</div>
       <div @click="to('/search')" class="menu-item" v-focusable>搜索</div>
     </div>
   </div>
@@ -40,15 +38,16 @@ export default {
     }
   }
   .menu-item {
-    padding: 10px 10px;
+    padding: 14px 24px;
+    font-size: 16px;
     margin: 10px;
     background: #f6f6f7;
-    border-radius: var(--radius);
+    border-radius: 100px;
     color: #000;
   }
   .menu-item.focus {
     background: var(--main);
-    color: #fff;
+    color: #49454f;
   }
 }
 </style>

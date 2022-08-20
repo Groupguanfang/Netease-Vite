@@ -1,6 +1,6 @@
 <template>
   <div class="newsongs">
-    <h2>推荐</h2>
+    <h2>热门新曲</h2>
     <div class="list" id="newsongs-list">
       <div
         @onFocus="focus()"

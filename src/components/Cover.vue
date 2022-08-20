@@ -1,13 +1,23 @@
 <template>
   <div class="cover">
     <img :src="image" />
-    <div class="title">{{ title }}</div>
+    <div class="title" v-if="showTitle">{{ title }}</div>
   </div>
 </template>
 
 <script>
 export default {
   props: ["title", "image"],
+  data() {
+    return {
+      showTitle: true
+    }
+  },
+  mounted() {
+    if (this.title === '' || this.title === null || this.title === undefined) {
+      this.showTitle = false;
+    }
+  }
 };
 </script>
 

@@ -8,11 +8,13 @@
         class="toplist-item"
         :key="index"
         v-for="(item, index) in toplist"
+        v-if="index < 4"
       >
-        <Cover
-          :image="item.coverImgUrl + '?param=300y300'"
-          :title="item.name"
-        ></Cover>
+        <Cover :image="item.coverImgUrl + '?param=300y300'"></Cover>
+        <div class="right">
+          <h3 class="title">{{ item.name }}</h3>
+          <div class="description">{{ item.description }}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -50,7 +52,7 @@ export default {
 .list {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 5px;
 }
 .list .cover {
@@ -60,12 +62,35 @@ export default {
 .toplist-item {
   transition: ease 0.2s;
   width: 100% !important;
+  display: flex;
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 10px;
   .cover {
-    width: 100% !important;
+    width: 20%;
+  }
+  .right {
+    width: 80%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10px;
+    h3 {
+      margin: 0;
+    }
+    .description {
+      margin-top: 10px;
+      color: #888;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+    }
   }
 }
 .toplist-item.focus {
-  transform: scale(1.1);
+  transform: scale(1.01);
   transition: ease 0.2s;
   box-shadow: 0 0 40px #0006;
 }
