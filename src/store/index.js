@@ -1,10 +1,10 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import state from "./state";
+import mutations from "./Action/mutations";
 
 Vue.use(Vuex); // 使用Vuex
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {},
+  state: state,
+  mutations: mutations,
 });
