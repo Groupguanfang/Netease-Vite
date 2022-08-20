@@ -1,11 +1,6 @@
 <template>
   <div class="home">
-    <Title title="发现音乐">
-      <div class="item">
-        <img class="avatar" :src="avatar" />
-        <div class="title">我的</div>
-      </div>
-    </Title>
+    <Title title="发现音乐"></Title>
     <NewSongs></NewSongs>
     <TopList></TopList>
   </div>
@@ -32,10 +27,5 @@ export default {
   flex-direction: column;
   align-items: center;
   margin: 0 20px;
-  .avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 100px;
-  }
 }
 </style>
