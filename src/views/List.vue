@@ -1,6 +1,7 @@
 <template>
   <div class="list-single">
     <Title title="详情"></Title>
+
     <div class="header">
       <div class="left">
         <img class="cover" :src="cover" />
@@ -12,9 +13,11 @@
         </div>
         <div class="bottom">
           <button v-focusable :disabled="loading">播放全部</button>
+          <div class="author">作者：{{ author.name }}</div>
         </div>
       </div>
     </div>
+
     <div class="content">
       <div
         class="content-item"
@@ -31,11 +34,14 @@
         </div>
       </div>
     </div>
+
+    <BackTop />
   </div>
 </template>
 
 <script>
 import Title from "../components/Title.vue";
+import BackTop from "../components/BackTop.vue";
 export default {
   data() {
     return {
@@ -45,14 +51,17 @@ export default {
       description: "",
       loading: true,
       songs: [],
+      author: {
+        name: "加载中",
+      },
     };
   },
   methods: {
     /**
      * 将秒时间转为合适的格式输出
      *
-     * @param int
-     * @return var
+     * @params int
+     * @returns var
      * @author Zero
      * @since 2022
      */
@@ -76,12 +85,13 @@ export default {
       let author = await this.$axios.get(
         "/user/detail?uid=" + data.data.playlist.userId
       );
+      this.author.name = author.data.profile.nickname;
       console.log(author);
     } catch {
       console.error(error);
     }
   },
-  components: { Title },
+  components: { Title, BackTop },
 };
 </script>
 
@@ -91,11 +101,14 @@ h2 {
   margin-top: 0;
 }
 .list-single {
+  margin: 0px 20px;
   .header {
     display: flex;
     .left {
       width: 20%;
       margin-right: 24px;
+      max-width: 230px;
+      min-width: 230px;
       img {
         width: 100%;
         border-radius: 24px;
@@ -108,6 +121,9 @@ h2 {
       justify-content: space-between;
       .bottom {
         margin-bottom: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
     }
   }
@@ -116,7 +132,7 @@ h2 {
   .content-item {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 15px 10px;
     border-radius: var(--radius);
     margin: 10px 0;
     -webkit-user-select: none;
@@ -138,9 +154,9 @@ h2 {
   }
   .content-item.focus {
     transform: scale(1.005);
-    background: var(--third);
+    background: var(--first);
     transition: ease 0.2s;
-    color: var(--main);
+    color: #fff;
   }
 }
 </style>

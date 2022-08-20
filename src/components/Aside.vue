@@ -3,6 +3,11 @@
     <div class="logo">
       <img src="@/assets/neteaselogo.png" />
     </div>
+    <div class="nav_button">
+      <div class="item" @click="go('back')" v-focusable>←</div>
+      <div class="item" @click="go('next')" v-focusable>→</div>
+      <div class="item" @click="go()" v-focusable>↑</div>
+    </div>
     <div id="menu" class="menu">
       <div @click="to('/')" class="menu-item" id="first" v-focusable>发现</div>
       <div @click="to('/search')" class="menu-item" v-focusable>搜索</div>
@@ -15,6 +20,16 @@ export default {
   methods: {
     to(push) {
       this.$router.push(push);
+    },
+    go(nav) {
+      if (nav === "back") {
+        this.$router.go(-1);
+      } else if (nav === "next") {
+        this.$router.go(1);
+      } else {
+        document.querySelector("main").scrollTop =
+          document.documentElement.scrollTop = 0;
+      }
     },
   },
 };
@@ -35,6 +50,26 @@ export default {
     img {
       width: 78%;
       margin: 0 10px;
+    }
+  }
+  .nav_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    gap: 10px;
+    .item {
+      background: var(--main);
+      border-radius: 14px;
+      width: 33.3%;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+      transition: ease 0.2s;
+    }
+    .item.focus {
+      transition: ease 0.2s;
+      transform: scale(1.1);
     }
   }
   .menu-item {
