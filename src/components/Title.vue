@@ -20,7 +20,11 @@ export default {
   },
   methods: {
     UserAction() {
-      this.$router.push("/user");
+      if (this.$store.state.isLogin === true) {
+        this.$router.push("/user");
+      } else {
+        this.$router.push('/login');
+      }
     },
   },
   props: ["title"],
@@ -43,11 +47,15 @@ export default {
   height: 3em;
   display: flex;
   .item {
-    border: 1px solid #79747e;
+    border: 1px solid #e0e0e0;
     display: flex;
     align-items: center;
     border-radius: 100px;
-    padding: 7px 16px;
+    height: 32px;
+    padding-right: 5px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
     .title {
       margin-left: 10px;
       margin-right: 5px;
