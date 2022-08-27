@@ -67,10 +67,11 @@ export default {
   border-radius: var(--radius);
   padding: 10px;
   .cover {
-    width: 20%;
+    width: 120px;
+    min-width: 120px;
   }
   .right {
-    width: 80%;
+    width: 100%;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
