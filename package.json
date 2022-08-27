@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "setup": "npm install && yarn install && echo ============================== && echo 安装完成 && echo ==============================",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
