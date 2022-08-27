@@ -3,20 +3,21 @@
     <div class="big-image">
       <div class="panel">
         <h1>{{ greet }}</h1>
+        <div>{{ tips }}</div>
       </div>
-      <img :src="bigImage" />
+      <div class="img" :style="{ backgroundImage: 'linear-gradient(209deg, rgb(0 0 0 / 0%), #ffffffdb),url('+bigImage+')' }"></div>
     </div>
     <div class="small-image">
       <div
           @click="action(item.targetId,item.targetType)"
-          @onFocus="setBigImage(item.imageUrl)"
-          @mouseover="setBigImage(item.imageUrl)"
+          @onFocus="setBigImage(item.imageUrl,item.typeTitle)"
+          @mouseover="setBigImage(item.imageUrl,item.typeTitle)"
           class="container"
           v-focusable
           :key="index"
           v-for="(item,index) in allImage"
       >
-        <img :src="item.imageUrl"/>
+        <img :src="item.imageUrl" alt=""/>
       </div>
     </div>
   </div>
@@ -28,12 +29,15 @@ export default {
     return {
       allImage:[],
       bigImage: "",
-      greet:""
+      greet:"",
+      tips:""
     }
   },
   methods: {
-    setBigImage(src) {
+    setBigImage(src,title) {
       this.bigImage = src;
+      this.tips = title;
+      document.querySelector('main').scrollTop = 0;
     },
     action(id,type) {
       if (type == 1) {
@@ -55,6 +59,7 @@ export default {
     console.log(ppt);
     this.allImage = ppt.data.banners;
     this.bigImage = this.allImage[0].imageUrl;
+    this.tips = this.allImage[0].typeTitle;
   }
 }
 </script>
@@ -66,11 +71,20 @@ export default {
 img {
   width: 100%;
 }
+.img {
+  height: 50vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .big-image {
   position: relative;
   .panel {
     position: absolute;
     z-index: 999;
+    width: 100%;
+    padding: 120px 40px;
+    padding-bottom: 0;
   }
 }
 .small-image {
