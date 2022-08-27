@@ -1,4 +1,5 @@
-<div style="margin-top: 30px;" align="center">
+<div align="center">
+<br><br>
 
 <img width="80px" height="80px" src="https://github.com/Groupguanfang/Netease-Vite/blob/master/src/assets/logo.png?raw=true" />
 
