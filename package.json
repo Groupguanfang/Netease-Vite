@@ -18,6 +18,7 @@
     "axios": "^0.27.2",
     "qs": "^6.11.0",
     "vue": "^2.7.8",
+    "vue-m-message": "^3.1.0",
     "vue-router": "^3.5.2",
     "vue-template-compiler": "^2.7.8",
     "vue-tv-focusable": "^1.1.1",

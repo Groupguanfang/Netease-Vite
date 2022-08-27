@@ -1,5 +1,5 @@
 <template>
-  <div class="search home">
+  <div class="search home padding">
     <Title title="搜索"></Title>
     <div class="main">
       <div class="left">

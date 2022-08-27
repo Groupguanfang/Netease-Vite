@@ -1,15 +1,17 @@
 <template>
-  <div class="home">
-    <Title title="发现音乐"></Title>
-    <NewSongs></NewSongs>
-    <TopList></TopList>
+  <div>
+    <swiper></swiper>
+    <div class="home padding">
+      <NewSongs></NewSongs>
+      <TopList></TopList>
+    </div>
   </div>
 </template>
 
 <script>
 import TopList from "../components/Home/TopList.vue";
-import Title from "../components/Title.vue";
 import NewSongs from "../components/Home/NewSongs.vue";
+import Swiper from "../components/Home/Swiper.vue";
 export default {
   data() {
     return {
@@ -17,11 +19,14 @@ export default {
         "https://s4.music.126.net/style/web2/img/default/default_avatar.jpg",
     };
   },
-  components: { TopList, Title, NewSongs },
+  components: {Swiper, TopList, Swiper, NewSongs },
 };
 </script>
 
 <style lang="less" scoped>
+main {
+  padding: 0!important;
+}
 .home {
   display: flex;
   flex-direction: column;
