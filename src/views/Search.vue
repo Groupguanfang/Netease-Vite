@@ -123,6 +123,9 @@ export default {
       }
     }
   }
+  .options {
+    padding: 10px;
+  }
   .right {
     width: 100%;
   }
