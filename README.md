@@ -9,8 +9,7 @@
 </div>
 
 ## 特点 🎶
-* 📝使用Vite+Vue2+Router+VueX全家桶制作而成
-* 📽️支持MV播放
+* 📝 使用Vite+Vue2+Router+VueX全家桶制作而成
 
 ## 部署 📦
 ### 本地运行与打包 📂
