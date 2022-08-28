@@ -4,6 +4,9 @@
       <div class="panel">
         <h1>{{ greet }}</h1>
         <div>{{ tips }}</div>
+        <div>
+          <button @click="UserAction()" class="item" v-focusable>个人中心</button>
+        </div>
       </div>
       <div class="img" :style="{ backgroundImage: 'linear-gradient(209deg, rgb(0 0 0 / 0%), #ffffffdb),url('+bigImage+')' }"></div>
     </div>
@@ -27,6 +30,7 @@
 export default {
   data() {
     return {
+      avatar: "https://s4.music.126.net/style/web2/img/default/default_avatar.jpg",
       allImage:[],
       bigImage: "",
       greet:"",
@@ -34,6 +38,13 @@ export default {
     }
   },
   methods: {
+    UserAction() {
+      if (this.$store.state.isLogin === true) {
+        this.$router.push("/user");
+      } else {
+        this.$router.push('/login');
+      }
+    },
     setBigImage(src,title) {
       this.bigImage = src;
       this.tips = title;
@@ -56,7 +67,6 @@ export default {
     else if (hour < 22){this.greet = '晚上好'}
     else {this.greet = '夜深了'}
     let ppt = await this.$axios.get('/banner');
-    console.log(ppt);
     this.allImage = ppt.data.banners;
     this.bigImage = this.allImage[0].imageUrl;
     this.tips = this.allImage[0].typeTitle;
