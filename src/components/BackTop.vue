@@ -9,6 +9,7 @@ export default {
   methods: {
     goTop() {
       document.querySelector('main').scrollTop = 0
+      this.$tv.requestFocus(document.querySelector("#first"))
     },
   },
 };
