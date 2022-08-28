@@ -1,5 +1,6 @@
 <template>
   <div class="aside">
+
     <div id="menu" class="menu">
       <div @click="to('/')" class="menu-item" id="first" v-focusable>
         <img src="../assets/logo.png" alt="home"/>
@@ -11,11 +12,20 @@
         </svg>
       </div>
     </div>
+
+    <div class="player-container" v-focusable>
+        <img class="player" :src="pic"/>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      pic: "pic.png"
+    }
+  },
   methods: {
     to(push) {
       this.$router.push(push);
@@ -40,6 +50,9 @@ export default {
   width: 72px;
   height: 100%;
   padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   #first {
     margin-top: 0;
     img {
@@ -67,6 +80,19 @@ export default {
     }
     .icon {
       color: white;
+    }
+  }
+  .player-container {
+    margin: 10px;
+    transition: ease 0.2s;
+    &.focus {
+      transform: scale(1.1);
+      transition: ease 0.2s;
+    }
+    img {
+      width: 100%;
+      transition: ease 0.2s;
+      border-radius: 100px;
     }
   }
 }
