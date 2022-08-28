@@ -3,58 +3,19 @@
     <Title title="搜索"></Title>
     <div class="main">
       <div class="left">
-        <input v-focusable v-model="text" type="search" :placeholder="placeholder" />
-        <div class="word">
-          <div class="line">
-            <div v-focusable>A</div>
-            <div v-focusable>B</div>
-            <div v-focusable>C</div>
-            <div v-focusable>D</div>
-            <div v-focusable>E</div>
-            <div v-focusable>F</div>
-            <div v-focusable>G</div>
-            </div>
-            <div class="line">
-            <div v-focusable>H</div>
-            <div v-focusable>I</div>
-            <div v-focusable>J</div>
-            <div v-focusable>K</div>
-            <div v-focusable>L</div>
-            <div v-focusable>M</div>
-            <div v-focusable>N</div>
-            </div>
-            <div class="line">
-            <div v-focusable>O</div>
-            <div v-focusable>P</div>
-            <div v-focusable>Q</div>
-            <div v-focusable>R</div>
-            <div v-focusable>S</div>
-            <div v-focusable>T</div>
-            <div v-focusable>U</div>
-            </div>
-            <div class="line">
-            <div v-focusable>V</div>
-            <div v-focusable>W</div>
-            <div v-focusable>X</div>
-            <div v-focusable>Y</div>
-            <div v-focusable>Z</div>
-            <div v-focusable>1</div>
-            <div v-focusable>2</div>
-            </div>
-            <div class="line">
-            <div v-focusable>3</div>
-            <div v-focusable>4</div>
-            <div v-focusable>5</div>
-            <div v-focusable>6</div>
-            <div v-focusable>7</div>
-            <div v-focusable>8</div>
-            <div v-focusable>9</div>
-            </div>
-            <div class="line">
-            <div v-focusable>0</div>
-            </div>
+        <div class="row">
+          <input v-focusable v-model="text" type="search" :placeholder="placeholder" />
+          <div class="search-button" v-focusable>
+            <svg stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15.5 15.5L19 19" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M5 11C5 14.3137 7.68629 17 11 17C12.6597 17 14.1621 16.3261 15.2483 15.237C16.3308 14.1517 17 12.654 17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
-          <div>快速键入，<br>或将光标移动至搜索框，按确定键使用系统键盘搜索</div>
+        </div>
+        <div class="options">
+          <div class="item">单曲</div>
+          <div class="item">专辑</div>
+          <div class="item">歌手</div>
         </div>
       </div>
       <div class="right"></div>
@@ -99,26 +60,36 @@ export default {
   display: flex;
   .left {
     min-width: 300px;
-    input {
-      width: 100%;
-    }
-    .word {
-      width: 100%;
-      .line {
-        display: flex;
+    .row {
+      display: flex;
+      align-items: center;
+      input {
         width: 100%;
-        div {
-          background: var(--second);
-          padding: 10px;
-          width: 100%;
-          transition: ease 0.2s;
-          font-size: 24px;
-          text-align: center;
-        }
-        div.focus {
-          transform: scale(1.1);
+      }
+      input {
+        transition: ease 0.2s;
+        &.focus {
           background: var(--main);
           transition: ease 0.2s;
+        }
+      }
+      .search-button {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+        border-radius: 100px;
+        background: var(--main);
+        padding: 3px;
+        transition: ease 0.2s;
+        &.focus {
+          transform: scale(1.1);
+          transition: ease 0.2s;
+        }
+        svg {
+          width: 100%;
+          height: 100%;
         }
       }
     }

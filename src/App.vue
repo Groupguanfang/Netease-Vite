@@ -32,7 +32,6 @@ export default {
     let user = await this.$axios.post('/login/status',{
       cookie: localStorage.getItem('cookie'),
     });
-    console.log(user);
     if (user.data.data.profile === null) {
       this.$store.commit('logoutAction');
     } else {
