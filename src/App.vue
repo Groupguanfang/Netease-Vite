@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="first-layer">
-      <aside>
+      <aside v-if="show">
         <Aside />
       </aside>
       <main>
@@ -15,11 +15,28 @@
 import Aside from "./components/Aside.vue";
 export default {
   components: { Aside },
-  mounted() {
-    // 聚焦
+  data() {
+    return {
+      show: true
+    }
+  },
+  async mounted() {
+    /**
+     * 页面载入后聚焦到第一个项目
+     */
     this.$tv.requestFocus(document.querySelector("#first"));
     this.$tv.scrollEl = document.querySelector("main");
-    // 当前播放
+    /**
+     * 判断API是否能访问
+     * @returns null
+     */
+    try {
+      let network = await this.$axios.get('/inner/version');
+    } catch(error) {
+      console.log(error);
+      this.$router.push('/404');
+      this.show = false;
+    }
   },
 };
 </script>

@@ -8,12 +8,14 @@
 export default {
   methods: {
     goTop() {
-      document.querySelector("main").scrollTop =
-        document.documentElement.scrollTop = 0;
+      document.querySelector('main').scrollTop = 0
     },
   },
 };
 </script>
 
 <style lang="less" scoped>
+.backtop {
+  margin: 10px;
+}
 </style>

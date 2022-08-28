@@ -4,6 +4,7 @@
     <div class="home padding">
       <NewSongs></NewSongs>
       <TopList></TopList>
+      <BackTop></BackTop>
     </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
 import TopList from "../components/Home/TopList.vue";
 import NewSongs from "../components/Home/NewSongs.vue";
 import Swiper from "../components/Home/Swiper.vue";
+import BackTop from "../components/BackTop.vue";
 export default {
   data() {
     return {
@@ -19,7 +21,7 @@ export default {
         "https://s4.music.126.net/style/web2/img/default/default_avatar.jpg",
     };
   },
-  components: {Swiper, TopList, Swiper, NewSongs },
+  components: {BackTop, Swiper, TopList, Swiper, NewSongs },
 };
 </script>
 

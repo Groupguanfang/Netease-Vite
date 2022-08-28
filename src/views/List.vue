@@ -12,7 +12,7 @@
           <div class="description">{{ description }}</div>
         </div>
         <div class="bottom">
-          <button v-focusable :disabled="loading">播放全部</button>
+          <button @onFocus="buttonFocus()" v-focusable :disabled="loading">播放全部</button>
           <div class="author">作者：{{ author.name }}</div>
         </div>
       </div>
@@ -57,6 +57,9 @@ export default {
     };
   },
   methods: {
+    buttonFocus() {
+      document.querySelector('main').scrollTop = 0
+    },
     /**
      * 将秒时间转为合适的格式输出
      *

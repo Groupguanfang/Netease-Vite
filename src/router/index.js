@@ -34,6 +34,12 @@ const routes = [
     meta: { title: "用户" },
     component: () => import("@/views/User.vue"),
   },
+  {
+    path: "/404",
+    name: "404",
+    meta: { title: "错误" },
+    component: () => import("@/views/404.vue"),
+  },
 ];
 
 const router = new VueRouter({
