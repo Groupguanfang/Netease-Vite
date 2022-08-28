@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     UserAction() {
-      if (this.$store.state.isLogin === true) {
+      if (this.$store.state.user.isLogin === true) {
         this.$router.push("/user");
       } else {
         this.$router.push('/login');
