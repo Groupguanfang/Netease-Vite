@@ -1,9 +1,20 @@
 <template>
-  <div class="user padding"></div>
+  <div class="user padding">
+
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+
+  }
+};
 </script>
 
 <style>
