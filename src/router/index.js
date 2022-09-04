@@ -29,7 +29,7 @@ const routes = [
     component: () => import("@/views/List.vue"),
   },
   {
-    path: "/user/:id",
+    path: "/user",
     name: "user",
     meta: { title: "用户" },
     component: () => import("@/views/User.vue"),

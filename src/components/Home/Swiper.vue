@@ -100,6 +100,7 @@ img {
 .small-image {
   display: flex;
   transition: ease 0.2s;
+  width: 1000px;
   gap: 8px;
   padding: 0 8px;
   position: absolute;
