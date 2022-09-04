@@ -14,9 +14,13 @@ export default {
       userData:[]
     }
   },
-  mounted() {
+  async mounted() {
     try {
-      let user = this.$axios.post('/')
+      let user = await this.$axios.post('/login/status',
+          {
+            cookie: localStorage.getItem('cookie'),
+          }
+      )
     } catch (error) {
       console.log(error);
     }
