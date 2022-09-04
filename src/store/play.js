@@ -2,8 +2,7 @@ const play = {
     state: {
         isOpen: false,
         current: {
-            picUrl: "",
-
+            picUrl: "./pic.png",
         }
     },
     mutations: {
