@@ -11,7 +11,7 @@ const play = {
         },
         closeDrawer(state) {
             state.isOpen = false
-        }
+        },
     }
 }
 export default play

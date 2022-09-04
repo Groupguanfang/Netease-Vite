@@ -2,7 +2,7 @@
   <div id="app">
 
     <!--第一层-->
-    <div class="first-layer">
+    <div class="first-layer" id="first-layer">
       <aside v-if="show">
         <Aside />
       </aside>
@@ -32,6 +32,7 @@ export default {
     /**
      * 页面载入后聚焦到第一个项目
      */
+    this.$tv.limitingEl = document.querySelector('#first-layer');
     this.$tv.requestFocus(document.querySelector("#first"));
     this.$tv.scrollEl = document.querySelector("main");
     /**
