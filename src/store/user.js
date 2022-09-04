@@ -1,4 +1,4 @@
-export default {
+const user = {
     state: {
         isLogin:false,
     },
@@ -11,3 +11,4 @@ export default {
         }
     }
 }
+export default user
