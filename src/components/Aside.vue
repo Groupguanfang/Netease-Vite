@@ -11,6 +11,13 @@
           <path d="M5 11C5 14.3137 7.68629 17 11 17C12.6597 17 14.1621 16.3261 15.2483 15.237C16.3308 14.1517 17 12.654 17 11C17 7.68629 14.3137 5 11 5C7.68629 5 5 7.68629 5 11Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
+      <div @click="to('/playlist')" class="menu-item" v-focusable>
+        <svg class="icon" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 11h14M2 17h11M2 5h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M20 18.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" fill="currentColor"></path>
+          <path d="M20 18.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm0 0v-7.9a.6.6 0 01.6-.6H22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+        </svg>
+      </div>
     </div>
 
     <div class="player-container" v-focusable @click="openDrawer()">

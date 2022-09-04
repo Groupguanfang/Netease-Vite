@@ -35,6 +35,12 @@ const routes = [
     component: () => import("@/views/User.vue"),
   },
   {
+    path: "/playlist",
+    name: "playlist",
+    meta: { title: "播放列表" },
+    component: () => import("@/views/PlayList.vue"),
+  },
+  {
     path: "/404",
     name: "404",
     meta: { title: "错误" },
