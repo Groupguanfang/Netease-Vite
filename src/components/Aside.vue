@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="player-container" v-focusable>
+    <div class="player-container" v-focusable @click="openDrawer()">
         <img class="player" :src="pic"/>
     </div>
   </div>
@@ -27,6 +27,11 @@ export default {
     }
   },
   methods: {
+    openDrawer() {
+      this.$store.commit('openDrawer');
+      this.$tv.limitingEl = document.querySelector('#player');
+      this.$tv.requestFocus(document.querySelector('#player-first'));
+    },
     to(push) {
       this.$router.push(push);
     },

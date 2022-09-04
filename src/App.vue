@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+
+    <!--第一层-->
     <div class="first-layer">
       <aside v-if="show">
         <Aside />
@@ -8,13 +10,19 @@
         <router-view />
       </main>
     </div>
+
+    <!--第二层-->
+    <div class="second-layer">
+      <Player></Player>
+    </div>
   </div>
 </template>
 
 <script>
 import Aside from "./components/Aside.vue";
+import Player from "./components/Player.vue";
 export default {
-  components: { Aside },
+  components: {Player, Aside },
   data() {
     return {
       show: true
@@ -51,3 +59,7 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+
+</style>
