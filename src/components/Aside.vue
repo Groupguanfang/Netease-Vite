@@ -40,7 +40,11 @@ export default {
       this.$tv.requestFocus(document.querySelector('#player-first'));
     },
     to(push) {
-      this.$router.push(push);
+      try {
+        this.$router.push(push);
+      } catch (error) {
+        console.log('您正处于本页面')
+      }
     },
     go(nav) {
       if (nav === "back") {
