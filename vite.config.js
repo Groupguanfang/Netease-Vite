@@ -7,6 +7,7 @@ import { resolve } from 'path'
 export default () =>
 	defineConfig({
 		base: './',
+
 		plugins: [createVuePlugin()],
 		server: {
 			open: false, //自动打开浏览器
