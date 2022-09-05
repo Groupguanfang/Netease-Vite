@@ -23,7 +23,7 @@ export default {
     } else {
       this.showList = true
     }
-  }
+  },
   components: { Title }
 }
 </script>

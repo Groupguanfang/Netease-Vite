@@ -41,6 +41,12 @@ const routes = [
     component: () => import("@/views/PlayList.vue"),
   },
   {
+    path: "/settings",
+    name: "settings",
+    meta: { title: "设置" },
+    component: () => import("@/views/Settings.vue"),
+  },
+  {
     path: "/404",
     name: "404",
     meta: { title: "错误" },
