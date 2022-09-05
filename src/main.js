@@ -4,6 +4,7 @@ import router from "./router/index.js";
 import store from "./store";
 import axios from "axios";
 import "./assets/index.less";
+import "./assets/dark.less"
 import "./storage";
 import Message from 'vue-m-message'
 import 'vue-m-message/dist/index.css'

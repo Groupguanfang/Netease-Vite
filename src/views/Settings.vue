@@ -4,14 +4,14 @@
     <div class="settings-container">
       <div class="item">
         <div class="label">是否开启暗黑模式</div>
-        <input type="checkbox" @change="changeMode()" v-model="darkMode" />
+        <input type="checkbox" @change="changeMode()" v-focusable v-model="darkMode" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Title from "../components/Title.vue"
+import Title from "../components/Title.vue";
 export default {
   data() {
     return {
