@@ -18,9 +18,22 @@ export default {
       darkMode: false
     }
   },
+  mounted() {
+    if (localStorage.getItem('darkmode') === 'true') {
+      this.darkMode = true
+    } else {
+      this.darkMode = false
+    }
+  },
   methods: {
     changeMode() {
-      console.log(this.darkMode)
+      if (this.darkMode === true) {
+        document.querySelector('body').classList.add('dark')
+      } else {
+        document.querySelector('body').classList.remove('dark')
+      }
+      localStorage.setItem('darkmode',this.darkMode);
+      console.log(localStorage.getItem('darkmode'));
     }
   },
   components: { Title }

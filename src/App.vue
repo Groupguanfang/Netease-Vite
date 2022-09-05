@@ -28,6 +28,16 @@ export default {
       show: true
     }
   },
+  created() {
+    /**
+     * 判断暗黑模式
+     */
+    if (localStorage.getItem('darkmode') === 'true') {
+      document.querySelector('body').classList.add('dark')
+    } else {
+      document.querySelector('body').classList.remove('dark')
+    }
+  },
   async mounted() {
     /**
      * 页面载入后聚焦到第一个项目
