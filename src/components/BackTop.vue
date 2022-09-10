@@ -1,5 +1,5 @@
 <template>
-  <div class="backtop">
+  <div class="backtop top-gap bottom-gap">
     <button @click="goTop()" v-focusable>返回顶部</button>
   </div>
 </template>
@@ -14,9 +14,3 @@ export default {
   },
 };
 </script>
-
-<style lang="less" scoped>
-.backtop {
-  margin: 10px;
-}
-</style>

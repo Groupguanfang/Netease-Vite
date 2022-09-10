@@ -3,8 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "setup": "npm install && yarn install && yarn tips",
-    "tips": "echo ============================== && echo 安装完成,请查阅README.md && echo ==============================",
+    "setup": "npm install && yarn install && echo ============================== && echo 安装完成,请查阅README.md && echo ==============================",
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview"

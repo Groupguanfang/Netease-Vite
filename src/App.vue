@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <div class="first-layer">
+
+    <!--第一层-->
+    <div class="first-layer" id="first-layer">
       <aside v-if="show">
         <Aside />
       </aside>
@@ -8,22 +10,39 @@
         <router-view />
       </main>
     </div>
+
+    <!--第二层-->
+    <div class="second-layer">
+      <Player></Player>
+    </div>
   </div>
 </template>
 
 <script>
 import Aside from "./components/Aside.vue";
+import Player from "./components/Player.vue";
 export default {
-  components: { Aside },
+  components: {Player, Aside },
   data() {
     return {
       show: true
+    }
+  },
+  created() {
+    /**
+     * 判断暗黑模式
+     */
+    if (localStorage.getItem('darkmode') === 'true') {
+      document.querySelector('body').classList.add('dark')
+    } else {
+      document.querySelector('body').classList.remove('dark')
     }
   },
   async mounted() {
     /**
      * 页面载入后聚焦到第一个项目
      */
+    this.$tv.limitingEl = document.querySelector('#first-layer');
     this.$tv.requestFocus(document.querySelector("#first"));
     this.$tv.scrollEl = document.querySelector("main");
     /**
@@ -51,3 +70,7 @@ export default {
   },
 };
 </script>
+
+<style lang="less" scoped>
+
+</style>

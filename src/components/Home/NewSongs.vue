@@ -1,5 +1,5 @@
 <template>
-  <div class="newsongs">
+  <div class="newsongs top-gap">
     <h2>热门新曲</h2>
     <div class="list" id="newsongs-list">
       <div
@@ -50,13 +50,17 @@ export default {
 <style lang="less" scoped>
 .newsongs {
   width: 100%;
+  display: flex;
+  h2 {
+    width: 300px;
+  }
   .list {
     flex-shrink: 0;
     transition: ease 0.2s;
     display: flex;
     overflow-x: auto;
     overflow-y: hidden;
-    width: 100%;
+    width: 79%;
     gap: 10px;
     padding: 10px 0;
     padding-left: 10px;
