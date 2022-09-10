@@ -40,6 +40,12 @@ const routes = [
     meta: { title: "错误" },
     component: () => import("@/views/404.vue"),
   },
+  {
+    path: "/settings",
+    name: "settings",
+    meta: { title: "设置" },
+    component: () => import("@/views/Settings.vue"),
+  }
 ];
 
 const router = new VueRouter({

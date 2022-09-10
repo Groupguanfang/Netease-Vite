@@ -90,3 +90,48 @@ input {
 .padding {
     padding: 10px;
 }
+
+.form-item {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    border-radius: var(--radius);
+    align-items: center;
+}
+
+.form-item.focus {
+    background: var(--main);
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.switch[type="checkbox"] {
+    position: relative;
+    border: none;
+    appearance: none;
+    background: #fff;
+    outline: none;
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.switch[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-10px) translateX(-12px) scale(0.7);
+    background-color: #8d8d8d;
+    border-radius: 20px;
+    transition: 0.2s ease all;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.switch:checked[type="checkbox"]::before{
+    background-color: var(--main);
+    transform: translateY(-10px) translateX(7px) scale(0.7)
+}
