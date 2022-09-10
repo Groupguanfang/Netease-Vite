@@ -98,11 +98,14 @@ input {
     padding: 10px;
     border-radius: var(--radius);
     align-items: center;
+    transform: translateX(-10px);
+    position: relative;
 }
 
 .form-item.focus {
     background: var(--main);
-    transform: scale(1.1);
+    transform: scale(1.1) translateX(-10px);
+    position: relative;
     color: #fff;
 }
 
@@ -124,7 +127,7 @@ input {
     width: 30px;
     height: 30px;
     transform: translateY(-10px) translateX(-12px) scale(0.7);
-    background-color: #8d8d8d;
+    background-color: rgba(0, 0, 0, 0.32);
     border-radius: 20px;
     transition: 0.2s ease all;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),

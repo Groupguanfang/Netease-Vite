@@ -17,6 +17,7 @@
           @mouseover="setBigImage(item.imageUrl,item.typeTitle)"
           class="container"
           v-focusable
+          @onBlur="blur()"
           :key="index"
           v-for="(item,index) in allImage"
       >
@@ -38,6 +39,12 @@ export default {
     }
   },
   methods: {
+    focus() {
+      this.$tv.scrollEl = document.querySelector('.small-image')
+    },
+    blur() {
+      this.$tv.scrollEl = document.querySelector('main')
+    },
     UserAction() {
       if (this.$store.state.user.isLogin === true) {
         this.$router.push("/user");
@@ -46,9 +53,10 @@ export default {
       }
     },
     setBigImage(src,title) {
-      this.bigImage = src;
-      this.tips = title;
-      document.querySelector('main').scrollTop = 0;
+      this.focus()
+      this.bigImage = src
+      this.tips = title
+      document.querySelector('main').scrollTop = 0
     },
     action(id,type) {
       if (type == 1) {
@@ -100,13 +108,23 @@ img {
 .small-image {
   display: flex;
   transition: ease 0.2s;
-  width: 1000px;
+  width: 100%;
   gap: 8px;
   padding: 0 8px;
   position: absolute;
+  flex-shrink: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
   transform: translateY(-34px);
+  .container {
+    width: 1000px;
+  }
+  .container::-webkit-scrollbar {
+    display: none;
+  }
   .container img {
     border-radius: 8px;
+    width: 170px;
   }
   .container.focus,.container:hover {
     transform: scale(1.1);

@@ -93,6 +93,8 @@ export default {
 .toplist-item.focus {
   transform: scale(1.01);
   transition: ease 0.2s;
-  box-shadow: 0 0 40px #0006;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%),
+              0 2px 4px -1px rgb(0 0 0 / 6%);
+  background: #ffdcf1;
 }
 </style>

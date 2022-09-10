@@ -30,6 +30,7 @@ export default {
 <style lang="less" scoped>
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 10px;
   background: #eee;
